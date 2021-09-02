@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+	<link rel="stylesheet" type="text/css" href="css/fonts.css" />
+	<link rel="stylesheet" type="text/css" href="css/foundation-base.css?v=1.0" />
+    
+	<script type="text/javascript" src="scripts/modernizr.js"></script>    	
+    <script type="text/javascript" src="scripts/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="scripts/fastclick.js"></script>    	
+	<script type="text/javascript" src="scripts/initialise.js?v=1.0"></script>
+
+    <!--Page specific--> 
+    	<link rel="stylesheet" type="text/css" href="css/solar-system.css?v=1.0" />         
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+
+	<title>Solar System</title>
+</head>
+
+<body>
+	<header>
+    </header>
+    
+    <main>
+    	<div id="main-background">
+            <div class="stars"></div>
+            <div class="twinkling"></div>
+        </div>
+        <!-- 1008px max-width -->
+        <div class="row">
+            <div class="small-12 columns">
+                <section id="wikipedia-article">
+                    <h1></h1>
+                    <div id="article"></div>
+                    <a href="#">Read more on Wikipedia</a>
+                    <div id="dashboard" class="cf">
+                        <span>Sizes accurate: moons, distances and speed need work</span>
+                        <button id="pause">Pause animation</button>
+                        <button id="hide">Hide animation</button>
+                    </div>
+                    <div class="background"></div>
+                </section>
+            </div>
+        </div>
+        <section id="canvas">
+            <div id="center-canvas">
+                <div id="sun">
+                    <!-- 174px diameter -->
+                    <button>Sun<span>10x smaller</span></button>
+                </div>
+                <div id="mercury" class="planet-orbit">
+                    <div class="position">
+                        <button title="Mercury
+                            Size = 0.38 Earth Diameters
+                            Distance from Sun = 0.39 Astronomical Units"></button>
+                    </div>
+                </div>
+                <div id="venus" class="planet-orbit">
+                    <div class="position">
+                        <button title="Venus
+                            Size = 0.95 Earth Diameters
+                            Distance from Sun = 0.723 Astronomical Units"></button>
+                    </div>
+                </div>
+                <div id="earth" class="planet-orbit">
+                    <div class="position">
+                        <ul class="moon-orbit">
+                            <li class="moon-1"></li>
+                        </ul>
+                        <button title="Earth
+                            Size = 1 Earth Diameter
+                            Distance from Sun = 1 Astronomical Unit"></button>
+                    </div>
+                </div>
+                <div id="mars" class="planet-orbit">
+                    <div class="position">
+                        <ul class="moon-orbit">
+                            <li class="moon-1"></li>
+                            <li class="moon-2"></li>
+                        </ul>
+                        <button title="Mars
+                            Size = 0.53 Earth Diameters
+                            Distance from Sun = 1.524 Astronomical Units"></button>
+                    </div>
+                </div>
+                <div id="jupiter" class="planet-orbit">
+                    <div class="position">
+                        <button title="Jupiter
+                            Size = 11.19 Earth Diameters
+                            Distance from Sun = 5.203 Astronomical Units"></button>
+                    </div>
+                </div>
+                <div id="saturn" class="planet-orbit">
+                    <div class="position">
+                        <button title="Saturn
+                            Size = 9.40 Earth Diameters
+                            Distance from Sun = 9.539 Astronomical Units">
+                            <div class="rings-position">
+                                <div class="rings"></div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="uranus" class="planet-orbit">
+                    <div class="position">
+                        <button title="Uranus
+                            Size = 4.04 Earth Diameters
+                            Distance from Sun = 19.18 Astronomical Units"></button>
+                    </div>
+                </div>
+                <div id="neptune" class="planet-orbit">
+                    <div class="position">
+                        <button title="Neptune
+                            Size = 3.88 Earth Diameters
+                            Distance from Sun = 30.06 Astronomical Units"></button>
+                    </div>
+                </div>                                                                                
+            </div>
+        </section>
+	</main>  
+   
+    <footer>
+    </footer>
+    
+    <script type="text/javascript">
+		$(document).ready(function(){ 
+			initialise();
+		});
+	</script>
+</body>
+</html>

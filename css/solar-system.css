@@ -1,0 +1,485 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* -----------------------------------------------
+:: Animations
+-------------------------------------------------- */
+/* Stars */
+@-webkit-keyframes star-twinkle {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes star-twinkle {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-o-keyframes star-twinkle {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@keyframes star-twinkle {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+/* Solar System canvas */
+@-webkit-keyframes anti-clockwise {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(-360deg); }
+}
+@-moz-keyframes anti-clockwise {
+	0% { -moz-transform: rotate(0deg); }
+	100% { -moz-transform: rotate(-360deg); }
+}
+@-o-keyframes anti-clockwise {
+	0% { -o-transform: rotate(0deg); }
+	100% { -o-transform: rotate(-360deg); }
+}
+@keyframes anti-clockwise {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(-360deg); }
+}
+@-webkit-keyframes sun-glow {
+  from { box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fac031; }
+  to { box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fac031; }
+}
+@-moz-keyframes sun-glow {
+  from { box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fac031; }
+  to { box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fac031; }
+}
+@-o-keyframes sun-glow {
+  from { box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fac031; }
+  to { box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fac031; }
+}
+@keyframes sun-glow {
+  from { box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fac031; }
+  to { box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fac031; }
+}
+
+.paused {
+    -webkit-animation-play-state: paused !important;
+    -moz-animation-play-state: paused !important;
+    -o-animation-play-state: paused !important; 
+    animation-play-state: paused !important;
+}
+
+
+/* -----------------------------------------------
+:: Stars (from https://www.script-tutorials.com/night-sky-with-twinkling-stars/)
+-------------------------------------------------- */
+#main-background > * {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	right: 8px;
+	bottom: 8px;
+}
+
+#main-background .stars {
+	background:#000 url(../images/stars.png) repeat top center;
+}
+
+#main-background .twinkling {
+	background:transparent url(../images/twinkling.png) repeat top center;
+	-moz-animation:star-twinkle 200s linear infinite;
+	-ms-animation:star-twinkle 200s linear infinite;
+	-o-animation:star-twinkle 200s linear infinite;
+	-webkit-animation:star-twinkle 200s linear infinite;
+	animation:star-twinkle 200s linear infinite;
+}
+
+
+/* -----------------------------------------------
+:: #wikipedia-article
+-------------------------------------------------- */
+#wikipedia-article {
+    position: relative;
+    margin: 1em 0;
+    padding: 1em 1em 0.5em 1em;
+}
+
+#wikipedia-article p {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+#wikipedia-article.bright-text p {
+	color: #e3e4e2;
+}
+
+#wikipedia-article a,
+#dashboard button {
+    position: relative;
+    z-index: 1;
+}
+
+#dashboard {
+	margin-top: 1em;
+	padding: 0.5em 0;
+	border-top: 1px solid #474c55;
+}
+
+#dashboard span,
+#dashboard button {
+	display: block;
+    line-height: 1.75;
+}
+
+#dashboard button {
+    font-size: 20px;
+    font-size: 1.25rem;
+	color: #fff;
+    vertical-align: middle;
+}
+
+#wikipedia-article .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0.1;
+}
+
+
+/* -----------------------------------------------
+:: Canvas / Sun / Planets - General
+-------------------------------------------------- */
+#canvas {
+    position: absolute;
+	top: 8px;
+	left:0;
+	display: table;
+	min-height: 1008px;	/* 1024px-16px padding; */
+	height: 0; /* Firefox hack */
+	width: 100%;
+	padding: 0 8px;
+}
+
+#center-canvas {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#sun {
+	text-align: center;
+}
+
+#sun button,
+.planet-orbit button {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+#sun button {
+    width: 10.875em; /* Sun is 174px, 10x smaller */
+    height: 10.875em; /* Sun is 174px, 10x smaller */
+	color: #474c55;
+	background: radial-gradient(circle, #fac031 50%, #fff 100%);
+	-webkit-animation: sun-glow 1.5s ease-in-out infinite alternate;
+	-moz-animation: sun-glow 1.5s ease-in-out infinite alternate;
+	animation: sun-glow 1.5s ease-in-out infinite alternate;
+}
+
+#sun button span {
+    display: block;
+}
+
+.planet-orbit {
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+}
+
+.planet-orbit .position {
+    position: relative;
+}
+
+.planet-orbit button,
+.moon-orbit {
+	/* Added to position planets/moons 50% from center of shape */
+    position: absolute;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.planet-orbit button {
+	background-size: 150% 100% !important;
+    background-position: 12.5% !important;
+    -moz-box-shadow: 5px 0px 10px -2px #fff;
+    -webkit-box-shadow: 5px 0px 10px -2px #fff;
+    box-shadow: 5px 0px 10px -2px #fff;
+}
+
+.moon-orbit {
+    list-style: none;
+}
+
+.moon-orbit li:before {
+    content: "·";
+    position: absolute;
+}
+
+.moon-orbit li {
+    position: absolute;
+    width: 100%;
+	height: 100%;	
+	color: #fff;
+}
+
+
+/* -----------------------------------------------
+:: Planets - Mercury
+-------------------------------------------------- */
+#mercury {
+	/* planet speed?? */
+	-webkit-animation: anti-clockwise 5s linear infinite;
+	-moz-animation: anti-clockwise 5s linear infinite;
+	-o-animation: anti-clockwise 5s linear infinite;
+	animation: anti-clockwise 5s linear infinite;
+}
+
+#mercury .position {
+	right: 7em; /* planet distance?? */
+}
+
+#mercury button {
+	height: 0.38em; /* planet size */
+    width: 0.38em; /* planet size */
+    background: radial-gradient(circle, #E2E2E2 50%, #000 100%);
+}
+
+
+/* -----------------------------------------------
+:: Planets - Venus
+-------------------------------------------------- */
+#venus {
+	/* planet speed?? */
+	-webkit-animation: anti-clockwise 10s linear infinite;
+	-moz-animation: anti-clockwise 10s linear infinite;
+	-o-animation: anti-clockwise 10s linear infinite;
+	animation: anti-clockwise 10s linear infinite;
+}
+
+#venus .position {
+	right: 9em; /* planet distance?? */
+}
+
+#venus button {
+	height: 0.95em; /* planet size */
+    width: 0.95em; /* planet size */
+    background: radial-gradient(circle, #e39e1c 50%, #000 100%);
+}
+
+
+/* -----------------------------------------------
+:: Planets - Earth
+-------------------------------------------------- */
+#earth {
+	/* planet speed?? */
+	-webkit-animation: anti-clockwise 15s linear infinite;
+	-moz-animation: anti-clockwise 15s linear infinite;
+	-o-animation: anti-clockwise 15s linear infinite;
+	animation: anti-clockwise 15s linear infinite;
+}
+
+#earth .position {
+	right: 11em; /* planet distance?? */
+}
+
+#earth button,
+#earth .moon-orbit {
+	height: 1em; /* planet size */
+    width: 1em; /* planet size */
+}
+
+#earth button {
+    background: radial-gradient(circle, #0077be 50%, #000 100%);
+}
+
+#earth li.moon-1 {
+    font-size: 1em; /* moon size?? */
+    line-height: 5em; /* moon distance?? */
+	/* moon speed?? */
+	-webkit-animation: anti-clockwise 8s linear infinite;
+	-moz-animation: anti-clockwise 8s linear infinite;
+	-o-animation: anti-clockwise 8s linear infinite;
+	animation: anti-clockwise 8s linear infinite;
+}
+
+
+/* -----------------------------------------------
+:: Planets - Mars
+-------------------------------------------------- */
+#mars {
+	/* planet speed?? */
+	-webkit-animation: anti-clockwise 20s linear infinite;
+	-moz-animation: anti-clockwise 20s linear infinite;
+	-o-animation: anti-clockwise 20s linear infinite;
+	animation: anti-clockwise 20s linear infinite;
+}
+
+#mars .position {
+	right: 13em; /* planet distance?? */
+}
+
+#mars button,
+#mars .moon-orbit {
+	height: 0.53em; /* planet size */
+    width: 0.53em; /* planet size */
+}
+
+#mars button {
+    background: radial-gradient(circle, #c1440e 50%, #000 100%);
+}
+
+#mars li.moon-1 {
+    font-size: 1em; /* moon size?? */
+    line-height: 2em; /* moon distance?? */
+	/* moon speed?? */
+	-webkit-animation: anti-clockwise 2.5s linear infinite;
+	-moz-animation: anti-clockwise 2.5s linear infinite;
+	-o-animation: anti-clockwise 2.5s linear infinite;
+	animation: anti-clockwise 2.5s linear infinite;
+}
+
+#mars li.moon-2 {
+    font-size: 1.5em; /* moon size?? */
+    line-height: 3em; /* moon distance?? */
+	/* moon speed?? */
+	-webkit-animation: anti-clockwise 5s linear infinite;
+	-moz-animation: anti-clockwise 5s linear infinite;
+	-o-animation: anti-clockwise 5s linear infinite;
+	animation: anti-clockwise 5s linear infinite;	
+}
+
+
+/* -----------------------------------------------
+:: Planets - Jupiter
+-------------------------------------------------- */
+#jupiter {
+	/* planet speed?? */
+	-webkit-animation: anti-clockwise 25s linear infinite;
+	-moz-animation: anti-clockwise 25s linear infinite;
+	-o-animation: anti-clockwise 25s linear infinite;
+	animation: anti-clockwise 25s linear infinite;
+}
+
+#jupiter .position {
+	right: 21em; /* planet distance?? */
+}
+
+#jupiter button {
+	height: 11.19em; /* planet size */
+    width: 11.19em; /* planet size */
+    background: radial-gradient(circle, #d8ca9d 50%, #000 100%);
+}
+
+
+/* -----------------------------------------------
+:: Planets - Saturn
+-------------------------------------------------- */
+#saturn {
+	/* planet speed?? */
+	-webkit-animation: anti-clockwise 30s linear infinite;
+	-moz-animation: anti-clockwise 30s linear infinite;
+	-o-animation: anti-clockwise 30s linear infinite;
+	animation: anti-clockwise 30s linear infinite;
+}
+
+#saturn .position {
+	right: 24.5em; /* planet distance?? */
+}
+
+#saturn button {
+	height: 9.40em; /* planet size */
+    width: 9.40em; /* planet size */
+    background: radial-gradient(circle, #e3e0c0 50%, #000 100%);
+}
+
+#saturn .rings-position {
+	-webkit-animation: anti-clockwise 30s linear infinite reverse;
+	-moz-animation: anti-clockwise 30s linear infinite reverse;
+	-o-animation: anti-clockwise 30s linear infinite reverse;
+	animation: anti-clockwise 30s linear infinite reverse;
+}
+
+#saturn .rings {
+	position: absolute;
+	height: 25px;
+	width: 23.52em;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(1, rgba(0,0,0,0.0)), color-stop(0, rgba(255,255,255,1.0)));
+	background: -moz-linear-gradient( center bottom, rgba(0,0,0,0.0) 0%, rgba(255,255,255,1.0) 100%);
+	-moz-border-radius: 23.52em / 25px;
+	-webkit-border-radius: 23.52em / 25px;
+	border-radius: 23.52em / 25px;
+	-webkit-transform: translate(-30%,-50%) rotate(-27deg);
+	-ms-transform: translate(-30%,-50%) rotate(27deg);
+	transform: translate(-30%,-50%) rotate(27deg);
+}
+
+
+/* -----------------------------------------------
+:: Planets - Uranus
+-------------------------------------------------- */
+#uranus {
+	/* planet speed?? */
+	-webkit-animation: anti-clockwise 35s linear infinite;
+	-moz-animation: anti-clockwise 35s linear infinite;
+	-o-animation: anti-clockwise 35s linear infinite;
+	animation: anti-clockwise 35s linear infinite;
+}
+
+#uranus .position {
+	right: 27em; /* planet distance?? */
+}
+
+#uranus button {
+	height: 4.04em; /* planet size */
+    width: 4.04em; /* planet size */
+    background: radial-gradient(circle, #c6d3e3 50%, #000 100%);
+}
+
+
+/* -----------------------------------------------
+:: Planets - Neptune
+-------------------------------------------------- */
+#neptune {
+	/* planet speed?? */
+	-webkit-animation: anti-clockwise 40s linear infinite;
+	-moz-animation: anti-clockwise 40s linear infinite;
+	-o-animation: anti-clockwise 40s linear infinite;
+	animation: anti-clockwise 40s linear infinite;
+}
+
+#neptune .position {
+	right: 29.5em; /* planet distance?? */
+}
+
+#neptune button {
+	height: 3.88em; /* planet size */
+    width: 3.88em; /* planet size */
+    background: radial-gradient(circle, #274687 50%, #000 100%);
+}
+
+
+/* -----------------------------------------------
+:: Media specific
+-------------------------------------------------- */
+@media only screen and (min-width: 48em) {
+	/*
+	min-width:768px - iPad portrait - large-grid;
+	*/
+	#dashboard span, #dashboard button { line-height: 1; }
+	#dashboard span { position: absolute; left: 0; width: 100%; text-align: center; line-height: 1.25; }
+	#dashboard #pause { float: left; }
+	#dashboard #hide { float: right; }
+}

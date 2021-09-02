@@ -1,0 +1,66 @@
+/* BerlingskeSerifTx */
+@font-face {
+	font-family: 'Berlingske';
+	src: url('../fonts/BerlingskeSerifTx/BerlingskeSerifTx-XBd/BerlingskeSerifTx-XBd.eot');
+	src: local('☺'), url('../fonts/BerlingskeSerifTx/BerlingskeSerifTx-XBd/BerlingskeSerifTx-XBd.woff') format('woff'), url('../fonts/BerlingskeSerifTx/BerlingskeSerifTx-XBd/BerlingskeSerifTx-XBd.ttf') format('truetype'), url('../fonts/BerlingskeSerifTx/BerlingskeSerifTx-XBd/BerlingskeSerifTx-XBd.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Berlingske';
+	src: url('../fonts/BerlingskeSerifTx/BerlingskeSerifTx-Rg/BerlingskeSerifTx-Rg.eot');
+	src: local('☺'), url('../fonts/BerlingskeSerifTx/BerlingskeSerifTx-Rg/BerlingskeSerifTx-Rg.woff') format('woff'), url('../fonts/BerlingskeSerifTx/BerlingskeSerifTx-Rg/BerlingskeSerifTx-Rg.ttf') format('truetype'), url('../fonts/BerlingskeSerifTx/BerlingskeSerifTx-Rg/BerlingskeSerifTx-Rg.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Battersea */
+/*@font-face {
+	font-family: 'Battersea';
+	src: url('../fonts/Battersea/Battersea_Thin_2011/Battersea_Thin_2011.eot');
+	src: local('☺'), url('../fonts/Battersea/Battersea_Thin_2011/Battersea_Thin_2011.woff') format('woff'), url('../fonts/Battersea/Battersea_Thin_2011/Battersea_Thin_2011.ttf') format('truetype'), url('../fonts/Battersea/Battersea_Thin_2011/Battersea_Thin_2011.svg') format('svg');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Battersea';
+	src: url('../fonts/Battersea/Battersea_SemiBold_2011/Battersea_SemiBold_2011.eot');
+	src: local('☺'), url('../fonts/Battersea/Battersea_SemiBold_2011/Battersea_SemiBold_2011.woff') format('woff'), url('../fonts/Battersea/Battersea_SemiBold_2011/Battersea_SemiBold_2011.ttf') format('truetype'), url('../fonts/Battersea/Battersea_SemiBold_2011/Battersea_SemiBold_2011.svg') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Battersea';
+	src: url('../fonts/Battersea/Battersea_Regular_2011/Battersea_Regular_2011.eot');
+	src: local('☺'), url('../fonts/Battersea/Battersea_Regular_2011/Battersea_Regular_2011.woff') format('woff'), url('../fonts/Battersea/Battersea_Regular_2011/Battersea_Regular_2011.ttf') format('truetype'), url('../fonts/Battersea/Battersea_Regular_2011/Battersea_Regular_2011.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Battersea';
+	src: url('../fonts/Battersea/Battersea_Light_2011/Battersea_Light_2011.eot');
+	src: local('☺'), url('../fonts/Battersea/Battersea_Light_2011/Battersea_Light_2011.woff') format('woff'), url('../fonts/Battersea/Battersea_Light_2011/Battersea_Light_2011.ttf') format('truetype'), url('../fonts/Battersea/Battersea_Light_2011/Battersea_Light_2011.svg') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Battersea';
+	src: url('../fonts/Battersea/Battersea_ExtraBold_2011/Battersea_ExtraBold_2011.eot');
+	src: local('☺'), url('../fonts/Battersea/Battersea_ExtraBold_2011/Battersea_ExtraBold_2011.woff') format('woff'), url('../fonts/Battersea/Battersea_ExtraBold_2011/Battersea_ExtraBold_2011.ttf') format('truetype'), url('../fonts/Battersea/Battersea_ExtraBold_2011/Battersea_ExtraBold_2011.svg') format('svg');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Battersea';
+	src: url('../fonts/Battersea/Battersea_Bold_2011/Battersea_Bold_2011.eot');
+	src: local('☺'), url('../fonts/Battersea/Battersea_Bold_2011/Battersea_Bold_2011.woff') format('woff'), url('../fonts/Battersea/Battersea_Bold_2011/Battersea_Bold_2011.ttf') format('truetype'), url('../fonts/Battersea/Battersea_Bold_2011/Battersea_Bold_2011.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}*/
