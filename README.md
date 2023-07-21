@@ -8,3 +8,15 @@ The background text information is pulled in from the Wikipedia API via JSON; I 
 The star background I'll happily admit I found here:
 
 https://www.script-tutorials.com/night-sky-with-twinkling-stars/
+
+## Available Scripts
+
+In the root project directory you can run:
+
+### `npm install`
+
+Will perform a usual installation of any dependencies.
+
+### `npm run build`
+
+Will perform a TypeScript compile to the 'dist' folder, ready for deployment.
