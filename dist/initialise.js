@@ -3,7 +3,7 @@ let wikiApiUrl;
 let wikiUrl;
 // one set of values for raw URLs
 const wikiRawString = 'https://en.wikipedia.org/wiki/';
-const wikiApiRawString = 'https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&exintro&titles=';
+const wikiApiRawString = 'https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&exintro&origin=*&titles=';
 const updateDiagram = (article) => {
     wikiApiUrl = wikiApiRawString + article;
     wikiUrl = wikiRawString + article;
