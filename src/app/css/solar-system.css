@@ -123,11 +123,11 @@
 }
 
 #main-background .stars {
-  background: #000 url(../images/stars.png) repeat top center;
+  background: #000 url(../../../public/stars.png) repeat top center;
 }
 
 #main-background .twinkling {
-  background: transparent url(../images/twinkling.png) repeat top center;
+  background: transparent url(../../../public/twinkling.png) repeat top center;
   -moz-animation: star-twinkle 200s linear infinite;
   -ms-animation: star-twinkle 200s linear infinite;
   -o-animation: star-twinkle 200s linear infinite;
