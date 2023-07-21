@@ -1,0 +1,16 @@
+{
+  "name": "solar-system",
+  "version": "2.0.0",
+  "description": "Revamp from old code to include modern libraries",
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-import": "^2.27.5",
+    "typescript": "^5.1.6"
+  }
+}
