@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/solar-system/static/css/main.e84b38cb.css",
+    "main.js": "/solar-system/static/js/main.f91a66d8.js",
+    "static/js/787.d96af89e.chunk.js": "/solar-system/static/js/787.d96af89e.chunk.js",
+    "static/media/BerlingskeSerifTx-Rg.svg": "/solar-system/static/media/BerlingskeSerifTx-Rg.25fc86121371d04273b8.svg",
+    "static/media/BerlingskeSerifTx-XBd.svg": "/solar-system/static/media/BerlingskeSerifTx-XBd.d9e01ef7553a4eab17f5.svg",
+    "static/media/BerlingskeSerifTx-XBd.eot": "/solar-system/static/media/BerlingskeSerifTx-XBd.8bfb8198409c35d80752.eot",
+    "static/media/BerlingskeSerifTx-XBd.ttf": "/solar-system/static/media/BerlingskeSerifTx-XBd.ac1145bd54940635187a.ttf",
+    "static/media/BerlingskeSerifTx-Rg.eot": "/solar-system/static/media/BerlingskeSerifTx-Rg.174d59a00911c1b32908.eot",
+    "static/media/BerlingskeSerifTx-Rg.ttf": "/solar-system/static/media/BerlingskeSerifTx-Rg.02e4787776ba374f1676.ttf",
+    "static/media/stars.png": "/solar-system/static/media/stars.90c266f7d69f1ffb6137.png",
+    "static/media/BerlingskeSerifTx-XBd.woff": "/solar-system/static/media/BerlingskeSerifTx-XBd.434cae397f163ea9f750.woff",
+    "static/media/BerlingskeSerifTx-Rg.woff": "/solar-system/static/media/BerlingskeSerifTx-Rg.4903d474d81a8539072e.woff",
+    "index.html": "/solar-system/index.html",
+    "main.e84b38cb.css.map": "/solar-system/static/css/main.e84b38cb.css.map",
+    "main.f91a66d8.js.map": "/solar-system/static/js/main.f91a66d8.js.map",
+    "787.d96af89e.chunk.js.map": "/solar-system/static/js/787.d96af89e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e84b38cb.css",
+    "static/js/main.f91a66d8.js"
+  ]
+}
