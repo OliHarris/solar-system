@@ -1,48 +1,53 @@
-"use client";
-import React, { MouseEvent } from "react";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useCallback,
+  MouseEvent,
+} from "react";
 import axios from "axios";
+import parse from "html-react-parser";
+import "./styles/foundation-base.css";
+import "./App.css";
 
-export default function Home() {
-  let wikiApiUrl: string;
-  let wikiUrl: string;
+export function App() {
+  const [wikiHeading, setWikiHeading] = useState<string>("");
+  const [wikiArticle, setWikiArticle] = useState<string>("");
+  const [wikiAnchor, setWikiAnchor] = useState<string>("");
+
+  const wikiApiUrlRef = useRef<string>();
+  const wikiUrlRef = useRef<string>();
+
   // one set of values for raw URLs
   const wikiRawString: string = "https://en.wikipedia.org/wiki/";
   const wikiApiRawString: string =
     "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&exintro&origin=*&titles=";
 
-  const updateDiagram = (article: string) => {
-    wikiApiUrl = wikiApiRawString + article;
-    wikiUrl = wikiRawString + article;
+  const updateDiagram = useCallback((article: string) => {
+    wikiApiUrlRef.current = wikiApiRawString + article;
+    wikiUrlRef.current = wikiRawString + article;
 
     // populate info from Wiki Api JSON file
     axios
-      .get(wikiApiUrl)
+      .get(wikiApiUrlRef.current)
       .then((response) => {
         const pageInfo = response.data.query.pages;
         Object.keys(pageInfo).forEach((key) => {
           const pageExtract = pageInfo[key];
-
-          const wikiH1 = document.querySelector(
-            "#wikipedia-article h1"
-          ) as Element;
-          wikiH1.innerHTML = pageExtract.title;
-
-          const wikiArticle = document.querySelector(
-            "#wikipedia-article #article"
-          ) as Element;
-          wikiArticle.innerHTML = pageExtract.extract;
-
-          const wikiAnchor = document.querySelector(
-            "#wikipedia-article a"
-          ) as Element;
-          wikiAnchor.setAttribute("href", wikiUrl);
+          setWikiHeading(pageExtract.title);
+          setWikiArticle(pageExtract.extract);
+          if (wikiUrlRef.current) {
+            setWikiAnchor(wikiUrlRef.current);
+          }
         });
       })
       .catch((error) => {
         // console.log(error);
       });
-  };
-  updateDiagram("Solar_System");
+  }, []);
+  useEffect(() => {
+    updateDiagram("Solar_System");
+  }, [updateDiagram]);
 
   const handlePauseAnimation = (event: MouseEvent<HTMLButtonElement>) => {
     document
@@ -95,9 +100,9 @@ export default function Home() {
       <div className="row">
         <div className="small-12 columns">
           <section id="wikipedia-article">
-            <h1></h1>
-            <div id="article"></div>
-            <a href="#" target="_blank">
+            <h1>{wikiHeading}</h1>
+            <div id="article">{parse(wikiArticle)}</div>
+            <a href={wikiAnchor} target="_blank" rel="noreferrer">
               Read more on Wikipedia
             </a>
             <div id="dashboard" className="cf">
@@ -202,3 +207,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default App;
