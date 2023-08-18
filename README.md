@@ -36,6 +36,6 @@ Will perform a usual package of the build folder, ready for deployment.
 
 ## NOTE:
 
-As this is a create-react-app, I hosted it on GitHub pages using this guide:
+As this is a Vite app, I hosted it on GitHub pages using this guide:
 
 https://betterprogramming.pub/how-to-host-your-react-app-on-github-pages-for-free-919ad201a4cb
