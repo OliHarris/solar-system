@@ -26,13 +26,9 @@ In the root directory you can run:
 
 Will perform a usual installation of any dependencies.
 
-### `npm run start`
+### `npm run dev`
 
 Will perform a usual launch of the dev environment.
-
-### `npm run build`
-
-Will perform a usual package of the build folder, ready for deployment.
 
 ## NOTE:
 
